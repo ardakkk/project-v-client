@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
     "react", "react-dom"    
@@ -7,11 +8,11 @@ const VENDOR_LIBS = [
 module.exports = {
     mode: "development",
     entry: {
-        app: "./src/index.tsx",
-        vendor: VENDOR_LIBS
+        vendor: VENDOR_LIBS,
+        app: path.join(__dirname,'src','index.tsx')
     },
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "build"),
         publicPath: '/',
         filename: "[name].[hash].js"
     },
@@ -20,6 +21,7 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
@@ -33,6 +35,13 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, "public", "index.html"),
+            filename: "./index.html",
+            title: 'My App'
+        })
+    ],
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
@@ -41,5 +50,12 @@ module.exports = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
+    },
+    devServer: {
+        port: 3000,
+        hot: true,
+        compress: true,
+        contentBase: 'dist',
+        overlay: true
     }
 };
