@@ -1,12 +1,15 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "outDir": "./build/",
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es5",
         "jsx": "react",
-        "types": ["node"]
+        "types": ["node"],
+        "compilerOptions": {
+            "moduleResolution": "node"
+        }
     },
     "include": [
         "./src/**/*"
