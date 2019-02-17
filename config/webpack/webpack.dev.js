@@ -1,4 +1,4 @@
-const path = require('path');
+const { resolve } = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
@@ -8,7 +8,11 @@ module.exports = merge(
     {
         mode: "development",
         entry: {
-            app: './index.tsx'
+            bundle: './index.tsx'
+        },
+        output: {
+            filename: 'js/[name].[hash].js',
+            publicPath: '/'   
         },
         devtool: "cheap-module-eval-source-map",
         plugins: [

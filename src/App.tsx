@@ -5,7 +5,7 @@ interface AppProps {
 
 const App: React.FunctionComponent<AppProps> = (props) => {
     return (
-        <div>Hello React!</div>
+        <div>Hello React121212!</div>
     )
 };
 

@@ -23,11 +23,7 @@ module.exports = {
     },
     plugins: [
         new CheckerPlugin(),
-        new HtmlWebpackPlugin({
-            template: "../public/index.html",
-            filename: "./index.html",
-            title: 'My App'
-        })
+        new HtmlWebpackPlugin({template: '../public/index.html.ejs',}),
     ],
     externals: {
         "react": "React",
