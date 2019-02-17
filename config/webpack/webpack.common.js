@@ -1,6 +1,7 @@
 const { resolve, join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     resolve: {
@@ -30,7 +31,18 @@ module.exports = {
                             modules: true,
                             localIdentName: '[name]__[local]___[hash:base64:5]'
                         }
-                    }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer({
+                                    browsers: ['ie >= 8', 'last 4 version']
+                                })
+                            ],
+                            sourceMap: true
+                        }
+                    },
                 ]
             }
         ]
