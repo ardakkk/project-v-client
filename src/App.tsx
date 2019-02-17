@@ -1,24 +1,12 @@
 import * as React from 'react';
-
-export interface AppProps {
+import { hot } from 'react-hot-loader'
+interface AppProps {
 }
 
-export interface AppState {
-}
+const App: React.FunctionComponent<AppProps> = (props) => {
+    return (
+        <div>Hello React!</div>
+    )
+};
 
-export default class App extends React.Component<AppProps, AppState> {
-    constructor(props: AppProps) {
-        super(props);
-
-        this.state = {
-        }
-    }
-
-    public render() {
-        return (
-            <div>
-                Hello React!
-            </div>
-        );
-    }
-}
+export default hot(module)(App);
