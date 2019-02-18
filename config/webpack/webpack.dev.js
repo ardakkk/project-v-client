@@ -20,7 +20,7 @@ module.exports = merge(
             new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
         ],
         devServer: {
-            port: 3000,
+            port: 8080,
             hot: true,
             compress: true,
             contentBase: 'dist',

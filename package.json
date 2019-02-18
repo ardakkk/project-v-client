@@ -4,8 +4,8 @@
   "description": "react with typescript and pwa",
   "main": "index.js",
   "scripts": {
-    "prod": "npm run clean-build && webpack -p --config ./config/webpack/webpack.prod.js",
-    "start": "npm run start-dev",
+    "prod": "export NODE_ENV=prod && npm run clean-build && webpack -p --config ./config/webpack/webpack.prod.js",
+    "start": "export NODE_ENV=development && npm run start-dev",
     "start-dev": "webpack-dev-server --open --progress --inline --config ./config/webpack/webpack.dev.js",
     "start-prod": "npm run prod && node server.js",
     "clean-build": "rm -f -r -d build"
@@ -30,8 +30,11 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.6.5",
+    "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "tslint": "^5.12.1",

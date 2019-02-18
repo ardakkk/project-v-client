@@ -2,6 +2,8 @@ const { resolve, join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'prod';
 
 module.exports = {
     resolve: {
@@ -21,13 +23,13 @@ module.exports = {
                 use: ['babel-loader', 'awesome-typescript-loader']
             },
             {
-                test:/\.css$/,
+                test:/\.scss$/,
                 use:[
-                    'style-loader',
+                    devMode ? 'style-loader' :  MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1,
+                            importLoaders: 2,
                             modules: true,
                             localIdentName: '[name]__[local]___[hash:base64:5]'
                         }
@@ -43,6 +45,9 @@ module.exports = {
                             sourceMap: true
                         }
                     },
+                    {
+                        loader: 'sass-loader'
+                    }
                 ]
             }
         ]
@@ -50,6 +55,12 @@ module.exports = {
     plugins: [
         new CheckerPlugin(),
         new HtmlWebpackPlugin({template: '../public/index.html.ejs',}),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: 'css/[name].[hash].css',
+            chunkFilename: 'css/[id].[hash].css',
+        })
     ],
     externals: {
         "react": "React",
