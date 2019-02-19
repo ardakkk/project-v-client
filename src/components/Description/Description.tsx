@@ -13,7 +13,7 @@ export const Description: React.FunctionComponent<DescriptionProps> = (props) =>
             <div className={ classes.item }>2</div>
             <div className={ classes.item }>3</div>
             <div className={ classes.item }>4</div>
-            <div className={ classes.item }>5</div>
+            <div className={ classes.item }>1215</div>
         </div>
     );
 };
