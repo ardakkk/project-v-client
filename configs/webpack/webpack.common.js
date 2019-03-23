@@ -8,6 +8,9 @@ const devMode = process.env.NODE_ENV !== 'prod';
 module.exports = {
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
+        alias: {
+            'react-dom': '@hot-loader/react-dom'
+        },
         extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     context: resolve(__dirname, '../../src'),
