@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const commonConfig = require('./webpack.common');
 
 module.exports = merge(
@@ -20,6 +21,18 @@ module.exports = merge(
         plugins: [
             new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
         ],
+        optimization: {
+            minimizer: [new UglifyJsPlugin({
+                chunkFilter: (chunk) => {
+                    // Exclude uglification for the `vendor` chunk
+                    if (chunk.name === 'vendor') {
+                        return false;
+                    }
+                    return true;
+                },
+                cache: true,
+            })],
+        },
         devServer: {
             port: 8080,
             hot: true,
