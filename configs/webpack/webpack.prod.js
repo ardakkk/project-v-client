@@ -5,6 +5,7 @@ const commonConfig = require('./webpack.common');
 module.exports = merge(commonConfig, {
     mode: 'production',
     entry: {
+        vendor: ['react', 'react-dom'],
         bundle: './index.tsx'
     },
     output: {

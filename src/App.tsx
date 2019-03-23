@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import * as classes from './App.scss';
 import { Description } from './components/Description/Description';
 interface AppProps {
@@ -14,4 +14,4 @@ const App: React.FunctionComponent<AppProps> = (props) => {
     );
 };
 
-export default hot(module)(App);
+export default hot(App);

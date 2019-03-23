@@ -61,7 +61,7 @@ module.exports = {
     },
     plugins: [
         new CheckerPlugin(),
-        new HtmlWebpackPlugin({template: '../public/index.html.ejs',}),
+        new HtmlWebpackPlugin({template: '../public/index.html',}),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
@@ -69,10 +69,6 @@ module.exports = {
             chunkFilename: 'css/[id].[hash].css',
         })
     ],
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
     performance: {
         hints: false
     },

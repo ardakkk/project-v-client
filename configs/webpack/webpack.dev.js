@@ -8,6 +8,7 @@ module.exports = merge(
     {
         mode: "development",
         entry: {
+            vendor: ['react', 'react-dom'],
             bundle: './index.tsx'
         },
         output: {
