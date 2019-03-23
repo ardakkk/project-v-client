@@ -13,6 +13,7 @@ module.exports = merge(
         },
         output: {
             filename: 'js/[name].[hash].js',
+            chunkFilename: '[name].[hash].js',
             publicPath: '/'   
         },
         devtool: "cheap-module-eval-source-map",

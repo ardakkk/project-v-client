@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const devMode = process.env.NODE_ENV !== 'prod';
 
 module.exports = {
@@ -65,6 +66,7 @@ module.exports = {
     plugins: [
         new CheckerPlugin(),
         new HtmlWebpackPlugin({template: '../public/index.html',}),
+        new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
