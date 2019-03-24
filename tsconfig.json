@@ -6,10 +6,7 @@
         "module": "commonjs",
         "target": "es5",
         "jsx": "react",
-        "types": ["node", "jest"],
-        "compilerOptions": {
-            "moduleResolution": "node"
-        }
+        "types": ["node", "jest"]
     },
     "include": [
         "./src/**/*"
