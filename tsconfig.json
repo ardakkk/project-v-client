@@ -6,9 +6,7 @@
         "module": "commonjs",
         "target": "es5",
         "jsx": "react",
-        "types": ["node", "jest"],
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
+        "types": ["node", "jest"]
     },
     "include": [
         "./src/**/*"
