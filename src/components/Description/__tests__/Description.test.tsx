@@ -7,5 +7,5 @@ it('renders correctly', () => {
     const tree = renderer
       .create(<Description />)
       .toJSON();
-    expect('Description').toMatchSnapshot('hello');
+    expect(tree).toMatchSnapshot();
   });

@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly: hello 1`] = `"Description"`;
+exports[`renders correctly 1`] = `
+<div>
+  <img
+    alt="logo"
+    src="test-file-stub"
+  />
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+  <div>
+    3
+  </div>
+  <div>
+    4
+  </div>
+  <div>
+    1215
+  </div>
+</div>
+`;
