@@ -13,6 +13,7 @@
     "transformIgnorePatterns": ["/node_modules/"],
     "testRegex": "/__tests__/.*\\.(ts|tsx)$",
     "moduleDirectories": ["node_modules"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "globals": {
         "DEVELOPMENT": false,
         "FAKE_SERVER": false
