@@ -1,10 +1,10 @@
-const { resolve, join } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader');
-const autoprefixer = require('autoprefixer');
+const { resolve, join }    = require('path');
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const { CheckerPlugin }    = require('awesome-typescript-loader');
+const autoprefixer         = require('autoprefixer');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const devMode = process.env.NODE_ENV !== 'prod';
+const GenerateJsonFile     = require('generate-json-file-webpack-plugin');
+const devMode              = process.env.NODE_ENV !== 'prod';
 
 module.exports = {
     resolve: {
@@ -64,13 +64,16 @@ module.exports = {
     plugins: [
         new CheckerPlugin(),
         new HtmlWebpackPlugin({template: '../public/index.html',}),
-        new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: 'css/[name].[hash].css',
             chunkFilename: 'css/[id].[hash].css',
-        })
+        }),
+        new GenerateJsonFile({
+            filename: 'manifest.json',
+            jsonFile: './public/manifest.json'
+        }),
     ],
     performance: {
         hints: false

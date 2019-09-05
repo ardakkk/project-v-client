@@ -1,8 +1,9 @@
-const { resolve } = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const commonConfig = require('./webpack.common');
+const { resolve }          = require('path');
+const webpack              = require('webpack');
+const merge                = require('webpack-merge');
+const UglifyJsPlugin       = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const commonConfig         = require('./webpack.common');
 
 module.exports = merge(
     commonConfig,
@@ -23,6 +24,7 @@ module.exports = merge(
         },
         plugins: [
             new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
+            new BundleAnalyzerPlugin(),
         ],
         optimization: {
             minimizer: [new UglifyJsPlugin({

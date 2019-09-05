@@ -1,4 +1,7 @@
 /node_modules
+.firebaserc
+.firebase
+firebase.json
 package-lock.json
 /build
 yarn.lock

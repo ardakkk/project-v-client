@@ -1,0 +1,21 @@
+{
+    "short_name": "RPT",
+    "name": "React PWA Typescript",
+    "description": "React PWA Typescript",
+    "icons": [
+      {
+        "src": "./img/logo-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/logo-192x192.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#2979ff",
+    "background_color": "#FFFFFF"
+  }

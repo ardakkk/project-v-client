@@ -1,7 +1,9 @@
-const { resolve } = require('path');
-const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const commonConfig = require('./webpack.common');
+const { resolve }             = require('path');
+const merge                   = require('webpack-merge');
+const UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
+const commonConfig            = require('./webpack.common');
+const ManifestPlugin          = require('webpack-manifest-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = merge(commonConfig, {
     mode: 'production',
@@ -28,5 +30,23 @@ module.exports = merge(commonConfig, {
         publicPath: '/'
     },
     devtool: 'source-map',
-    plugins: []
+    plugins: [
+        new ManifestPlugin({
+            basePath: '/bundle',
+            fileName: 'asset-manifest.json'
+        }),
+        new SWPrecacheWebpackPlugin({
+            dontCacheBustUrlsMatching: /\.\w{8}\./,
+            filename: 'service-worker.js',
+            logger(message) {
+              if (message.indexOf('Total precache size is') === 0) {
+                return;
+              }
+              console.log(message);
+            },
+            minify: true,
+            navigateFallback: '/index.html',
+            staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+        }),
+    ]
 })
