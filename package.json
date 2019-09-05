@@ -16,7 +16,7 @@
   "author": "Ardak Tileu",
   "license": "ISC",
   "dependencies": {
-    "@hot-loader/react-dom": "npm:react-dom",
+    "@hot-loader/react-dom": "^16.9.0",
     "@types/node": "^11.9.4",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.6",
@@ -33,7 +33,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.6",
     "@types/react-test-renderer": "^16.8.1",
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.6.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
@@ -47,7 +47,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
-    "react-hot-loader": "^4.6.5",
+    "react-hot-loader": "^4.12.12",
     "react-test-renderer": "^16.8.5",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
@@ -60,5 +60,10 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
-  }
+  },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 8"
+  ]
 }

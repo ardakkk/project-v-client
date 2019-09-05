@@ -18,6 +18,9 @@ module.exports = merge(
             publicPath: '/'   
         },
         devtool: "cheap-module-eval-source-map",
+        resolve: {
+            alias: { 'react-dom': '@hot-loader/react-dom'  }
+        },
         plugins: [
             new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
         ],
