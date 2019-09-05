@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Description component renders correctly 1`] = `
 <div>
   <img
     alt="logo"
@@ -17,6 +17,9 @@ exports[`renders correctly 1`] = `
   </div>
   <div>
     4
+  </div>
+  <div>
+    1215
   </div>
   <div>
     1215

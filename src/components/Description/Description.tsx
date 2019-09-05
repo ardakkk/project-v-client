@@ -14,6 +14,7 @@ export const Description: React.FunctionComponent<any> = (props) => {
             <div className={ classes.item }>3</div>
             <div className={ classes.item }>4</div>
             <div className={ classes.item }>1215</div>
+            <div className={ classes.item }>1215</div>
         </div>
     );
 };

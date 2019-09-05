@@ -1,11 +1,11 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
-
+import * as React      from 'react';
+import { shallow }     from 'enzyme';
 import { Description } from '../Description';
 
-it('renders correctly', () => {
-    const tree = renderer
-      .create(<Description />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+describe('Description component', () => {
+  it('renders correctly', () => {
+      const component = shallow(<Description/>);
+
+      expect(component).toMatchSnapshot();
   });
+});
