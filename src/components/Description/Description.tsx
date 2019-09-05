@@ -4,7 +4,7 @@ const logo = require('../../assets/images/react.png');
 interface DescriptionProps {
 }
 
-export const Description: React.FunctionComponent<any> = (props) => {
+const Description: React.FunctionComponent<any> = (props) => {
 
     return (
         <div className={ classes.desc }>
@@ -18,3 +18,5 @@ export const Description: React.FunctionComponent<any> = (props) => {
         </div>
     );
 };
+
+export default Description;

@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
+import Description from './components/Description/Description';
 import * as classes from './App.scss';
-import { Description } from './components/Description/Description';
 interface AppProps {
 }
 

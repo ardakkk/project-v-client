@@ -1,6 +1,6 @@
-import * as React      from 'react';
-import { shallow }     from 'enzyme';
-import { Description } from '../Description';
+import * as React  from 'react';
+import { shallow } from 'enzyme';
+import Description from '../Description';
 
 describe('Description component', () => {
   it('renders correctly', () => {
