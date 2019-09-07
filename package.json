@@ -1,7 +1,8 @@
 {
-  "name": "react-pwa-typescript",
+  "name": "client",
+  "private": true,
   "version": "1.0.0",
-  "description": "react with typescript and pwa",
+  "description": "Client side",
   "main": "index.js",
   "scripts": {
     "prod": "export NODE_ENV=prod && npm run clean-build && webpack -p --config ./configs/webpack/webpack.prod.js",

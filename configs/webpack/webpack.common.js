@@ -1,6 +1,6 @@
 const { resolve, join }    = require('path');
-const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const { CheckerPlugin }    = require('awesome-typescript-loader');
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const autoprefixer         = require('autoprefixer');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const GenerateJsonFile     = require('generate-json-file-webpack-plugin');
@@ -63,7 +63,7 @@ module.exports = {
     },
     plugins: [
         new CheckerPlugin(),
-        new HtmlWebpackPlugin({template: '../public/index.html',}),
+        new HtmlWebpackPlugin({template: '../public/index.ejs'}),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
@@ -72,7 +72,7 @@ module.exports = {
         }),
         new GenerateJsonFile({
             filename: 'manifest.json',
-            jsonFile: './public/manifest.json'
+            jsonFile: resolve(__dirname, '../../public/manifest.json')
         }),
     ],
     performance: {
