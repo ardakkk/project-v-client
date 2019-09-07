@@ -39,10 +39,12 @@ module.exports = merge(
             })],
         },
         devServer: {
-            port: 8080,
+            host: '0.0.0.0',
+            disableHostCheck: true,
+            port: 3000,
             hot: true,
             compress: true,
-            contentBase: 'dist',
+            contentBase: './dist',
             overlay: true
         }
     }
