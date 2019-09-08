@@ -4,16 +4,10 @@
         "tslint:recommended",
         "tslint-config-standard",
         "tslint-react",
-        "tslint-config-prettier"
+        "tslint-config-prettier",
+        "tslint-import-group-ordering"
     ],
     "jsRules": {
-        "ordered-imports": [
-            true,
-            {
-                "import-sources-order": "any",
-                "named-imports-order": "case-insensitive"
-            }
-        ],
         "class-name": true,
         "comment-format": [true, "check-space"],
         "indent": [true, "spaces", 4],
@@ -35,10 +29,37 @@
         ]
     },
     "rules": {
+        "import-group-ordering": {
+            "severity": "warning",
+            "options": {
+                "imports-groups": [
+                    {
+                        "name": "dependencies"
+                    },
+                    {
+                        "name": "other"
+                    }
+                ],
+                "matching-rules": [
+                    {
+                        "type": "dependencies",
+                        "imports-group": "dependencies",
+                        "disable-native-nodejs-modules": true,
+                        "from-package.json": true
+                    },
+                    {
+                        "type": "project",
+                        "matches": ".*",
+                        "imports-group": "other"
+                    }
+                ]
+            }
+        },
         "class-name": true,
         "comment-format": [true, "check-space"],
         "indent": [true, "spaces"],
         "no-eval": true,
+        "await-promise": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,
         "no-unsafe-finally": true,

@@ -12,7 +12,7 @@
         "serve": "node server.js",
         "clean-build": "rm -f -r -d build",
         "test": "jest --config=configs/jest.json",
-        "lint": "tslint -c tslint.json 'src/**/*.{ts.tsx}'",
+        "lint": "tslint -p . -c tslint.json",
         "clean": "rm -rf node_modules/"
     },
     "author": "Ardak Tileu",
@@ -68,6 +68,7 @@
         "tslint": "^5.19.0",
         "tslint-config-prettier": "^1.18.0",
         "tslint-config-standard": "^8.0.1",
+        "tslint-import-group-ordering": "^2.1.2",
         "tslint-react": "^4.0.0",
         "typescript": "^3.3.3",
         "uglifyjs-webpack-plugin": "^2.1.2",
