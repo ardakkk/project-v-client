@@ -84,7 +84,11 @@
         "IE 8"
     ],
     "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*": "npm run lint & npm run test"
     }
+}
