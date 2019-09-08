@@ -89,6 +89,8 @@
         }
     },
     "lint-staged": {
-        "*": "npm run test"
+        "src/**/*.{js,jsx,ts,tsx,json,css}": [
+            "tslint --fix --project ."
+        ]
     }
 }
