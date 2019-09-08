@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header organism Snapshot should match 1`] = `
+<div
+  className="Header"
+>
+  <WithStyles(ForwardRef(AppBar))>
+    <WithStyles(ForwardRef(Toolbar))>
+      <WithStyles(ForwardRef(Typography))
+        noWrap={true}
+        variant="h6"
+      >
+        Victory
+      </WithStyles(ForwardRef(Typography))>
+    </WithStyles(ForwardRef(Toolbar))>
+  </WithStyles(ForwardRef(AppBar))>
+</div>
+`;

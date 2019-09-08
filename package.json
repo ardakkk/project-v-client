@@ -12,7 +12,7 @@
         "serve": "node server.js",
         "clean-build": "rm -f -r -d build",
         "test": "jest --config=configs/jest.json",
-        "lint": "tslint 'src/**/*.{ts.tsx}'",
+        "lint": "tslint -c tslint.json 'src/**/*.{ts.tsx}'",
         "clean": "rm -rf node_modules/"
     },
     "author": "Ardak Tileu",
@@ -89,6 +89,6 @@
         }
     },
     "lint-staged": {
-        "*": "npm run lint & npm run test"
+        "*": "npm run test"
     }
 }
