@@ -60,7 +60,10 @@ export const Header: React.FunctionComponent<any> = props => {
                                 />
                             </div>
                         </Grid>
-                        <Grid xs={2} className={classes.Header__menu}>
+                        <Grid
+                            item={true}
+                            xs={2}
+                            className={classes.Header__menu}>
                             <IconButton
                                 aria-label='show more'
                                 aria-haspopup='true'

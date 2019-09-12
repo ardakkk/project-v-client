@@ -6,10 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const devMode: boolean = process.env.NODE_ENV !== 'prod';
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app')
-);
+ReactDOM.render(<App />, document.getElementById('app'));
 
 if (!devMode) {
     registerServiceWorker();
