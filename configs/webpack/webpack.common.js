@@ -1,5 +1,6 @@
 const { resolve, join } = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -65,7 +66,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: 'css/[name].[hash].css',
+            filename: 'css/style.[hash].css',
             chunkFilename: 'css/[id].[hash].css',
         }),
         new GenerateJsonFile({
@@ -75,5 +76,21 @@ module.exports = {
     ],
     performance: {
         hints: false,
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all',
+                },
+            },
+        },
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+            }),
+        ],
     },
 }
