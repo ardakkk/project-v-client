@@ -12,7 +12,7 @@ module.exports = merge(commonConfig, {
     },
     output: {
         filename: 'js/[name].[hash].js',
-        chunkFilename: '[name].[hash].js',
+        chunkFilename: 'js/[name].[hash].js',
         publicPath: '/',
     },
     devtool: 'cheap-module-eval-source-map',
@@ -31,5 +31,8 @@ module.exports = merge(commonConfig, {
         compress: true,
         contentBase: './dist',
         overlay: true,
+    },
+    optimization: {
+        usedExports: true,
     },
 })
