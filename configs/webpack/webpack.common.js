@@ -1,4 +1,4 @@
-const { resolve, join } = require('path')
+const { resolve } = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
