@@ -36,7 +36,7 @@ export const Header: React.FunctionComponent<any> = props => {
                         <Grid
                             item={true}
                             lg={2}
-                            className={classes.Header__title}>
+                            className={classes.Header_title}>
                             <Typography variant='h6' noWrap={true}>
                                 Project V
                             </Typography>
@@ -45,13 +45,13 @@ export const Header: React.FunctionComponent<any> = props => {
                             item={true}
                             lg={7}
                             xs={8}
-                            className={`${classes.Header__search} ${
-                                isFocused ? classes.Header__search_focused : ''
+                            className={`${classes.Header_search} ${
+                                isFocused ? classes.Header___search_focused : ''
                             }`}>
-                            <div className={classes.Header__searchIcon}>
+                            <div className={classes.Header_searchIcon}>
                                 <SearchIcon />
                             </div>
-                            <div className={classes.Header__input}>
+                            <div className={classes.Header_input}>
                                 <InputBase
                                     placeholder='Search…'
                                     inputProps={{ 'aria-label': 'search' }}
@@ -63,7 +63,7 @@ export const Header: React.FunctionComponent<any> = props => {
                         <Grid
                             item={true}
                             xs={2}
-                            className={classes.Header__menu}>
+                            className={classes.Header_menu}>
                             <IconButton
                                 aria-label='show more'
                                 aria-haspopup='true'

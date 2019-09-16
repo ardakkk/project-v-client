@@ -1,11 +1,11 @@
 .Header {
-    &__title {
+    &_title {
         @media screen and (max-width: 479px) {
             display: none;
         }
     }
 
-    &__search {
+    &_search {
         width: 100%;
         position: relative;
         margin-left: 0;
@@ -16,12 +16,12 @@
         align-self: center;
         transition: all 0.3s ease;
 
-        &_focused {
+        &___focused {
             background-color: rgba(255, 255, 255, 0.25);
         }
     }
 
-    &__searchIcon {
+    &_searchIcon {
         width: 56px;
         height: 100%;
         position: absolute;
@@ -30,7 +30,7 @@
         align-items: center;
     }
 
-    &__input {
+    &_input {
         position: relative;
         display: inline-flex;
         align-items: center;
@@ -43,7 +43,7 @@
         }
     }
 
-    &__menu {
+    &_menu {
         display: flex;
         justify-content: flex-end;
     }
