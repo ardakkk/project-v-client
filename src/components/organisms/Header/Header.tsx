@@ -18,7 +18,7 @@ import * as classes from './Header.scss';
 
 export const Header: React.FunctionComponent<any> = props => {
     const [isFocused, setFocus] = React.useState<boolean>(false);
-    const [isOpenMenu, setOpenMenu] = React.useState<boolean>(false);
+    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
     const onFocus = React.useCallback(() => {
         setFocus(true);
@@ -27,15 +27,21 @@ export const Header: React.FunctionComponent<any> = props => {
         setFocus(false);
     }, []);
 
-    const handleMobileMenuOpen = () => setOpenMenu(true);
-    const handleMobileMenuClose = () => setOpenMenu(false);
+    const isMobuleMenuOpenMenu: boolean = Boolean(mobileMoreAnchorEl);
+    const handleMobileMenuOpen = (event: any): void => {
+        setMobileMoreAnchorEl(event.currentTarget);
+    };
+    const handleMobileMenuClose = (): void => {
+        setMobileMoreAnchorEl(null);
+    };
 
     const renderMobileMenu = (
         <Menu
+            anchorEl={mobileMoreAnchorEl}
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             keepMounted={true}
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isOpenMenu}
+            open={isMobuleMenuOpenMenu}
             onClose={handleMobileMenuClose}>
             <MenuItem>
                 <IconButton aria-label='show 4 new mails' color='inherit'>
