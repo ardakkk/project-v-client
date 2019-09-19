@@ -1,10 +1,4 @@
 .Header {
-    &_title {
-        @media screen and (max-width: 479px) {
-            display: none;
-        }
-    }
-
     &_search {
         width: 100%;
         position: relative;

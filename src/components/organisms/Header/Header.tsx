@@ -3,6 +3,7 @@ import * as React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import Badge from '@material-ui/core/Badge';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
@@ -79,22 +80,23 @@ export const Header: React.FunctionComponent<any> = props => {
             <AppBar>
                 <Toolbar>
                     <Grid container={true}>
-                        <Grid item={true} xs={2}>
-                            <IconButton
-                                edge='start'
-                                className={classes.menuButton}
-                                color='inherit'
-                                aria-label='open drawer'>
-                                <MenuIcon />
-                            </IconButton>
-                        </Grid>
-                        <Grid
-                            item={true}
-                            lg={2}
-                            className={classes.Header_title}>
-                            <Typography variant='h6' noWrap={true}>
-                                Project V
-                            </Typography>
+                        <Hidden smUp={true}>
+                            <Grid item={true} xs={2}>
+                                <IconButton
+                                    edge='start'
+                                    className={classes.menuButton}
+                                    color='inherit'
+                                    aria-label='open drawer'>
+                                    <MenuIcon />
+                                </IconButton>
+                            </Grid>
+                        </Hidden>
+                        <Grid item={true} lg={2}>
+                            <Hidden mdDown={true}>
+                                <Typography variant='h6' noWrap={true}>
+                                    Project V
+                                </Typography>
+                            </Hidden>
                         </Grid>
                         <Grid
                             item={true}
@@ -115,18 +117,20 @@ export const Header: React.FunctionComponent<any> = props => {
                                 />
                             </div>
                         </Grid>
-                        <Grid
-                            item={true}
-                            xs={2}
-                            className={classes.Header_menu}>
-                            <IconButton
-                                aria-label='show more'
-                                aria-haspopup='true'
-                                color='inherit'
-                                onClick={handleMobileMenuOpen}>
-                                <MoreIcon />
-                            </IconButton>
-                        </Grid>
+                        <Hidden smUp={true}>
+                            <Grid
+                                item={true}
+                                xs={2}
+                                className={classes.Header_menu}>
+                                <IconButton
+                                    aria-label='show more'
+                                    aria-haspopup='true'
+                                    color='inherit'
+                                    onClick={handleMobileMenuOpen}>
+                                    <MoreIcon />
+                                </IconButton>
+                            </Grid>
+                        </Hidden>
                     </Grid>
                 </Toolbar>
             </AppBar>
