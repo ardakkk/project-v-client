@@ -8,12 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import Brightness5Icon from '@material-ui/icons/Brightness5';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 import * as classes from './Header.scss';
 
@@ -45,12 +46,10 @@ export const Header: React.FunctionComponent<any> = props => {
             open={isMobuleMenuOpenMenu}
             onClose={handleMobileMenuClose}>
             <MenuItem>
-                <IconButton aria-label='show 4 new mails' color='inherit'>
-                    <Badge badgeContent={4} color='secondary'>
-                        <MailIcon />
-                    </Badge>
+                <IconButton color='inherit'>
+                    <Brightness5Icon />
                 </IconButton>
-                <p>Messages</p>
+                <p>white-theme</p>
             </MenuItem>
             <MenuItem>
                 <IconButton
@@ -68,7 +67,7 @@ export const Header: React.FunctionComponent<any> = props => {
                     aria-controls='primary-search-account-menu'
                     aria-haspopup='true'
                     color='inherit'>
-                    <AccountCircle />
+                    <SettingsIcon />
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -79,7 +78,7 @@ export const Header: React.FunctionComponent<any> = props => {
         <Grid className={classes.Header}>
             <AppBar>
                 <Toolbar>
-                    <Grid container={true}>
+                    <Grid container={true} alignItems='center'>
                         <Hidden smUp={true}>
                             <Grid item={true} xs={2}>
                                 <IconButton
@@ -110,18 +109,34 @@ export const Header: React.FunctionComponent<any> = props => {
                             </div>
                             <div className={classes.Header_input}>
                                 <InputBase
-                                    placeholder='Search…'
+                                    placeholder='Quick Find'
                                     inputProps={{ 'aria-label': 'search' }}
                                     onFocus={onFocus}
                                     onBlur={onBlur}
                                 />
                             </div>
                         </Grid>
+                        <Hidden smDown={true}>
+                            <Grid
+                                item={true}
+                                lg={3}
+                                className={classes.Header_menu}>
+                                <IconButton color='inherit'>
+                                    <Brightness5Icon />
+                                </IconButton>
+                                <IconButton color='inherit'>
+                                    <NotificationsIcon />
+                                </IconButton>
+                                <IconButton color='inherit'>
+                                    <SettingsIcon />
+                                </IconButton>
+                            </Grid>
+                        </Hidden>
                         <Hidden smUp={true}>
                             <Grid
                                 item={true}
                                 xs={2}
-                                className={classes.Header_menu}>
+                                className={classes.Header_mobile_menu}>
                                 <IconButton
                                     aria-label='show more'
                                     aria-haspopup='true'

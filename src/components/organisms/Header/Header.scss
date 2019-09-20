@@ -39,6 +39,11 @@
 
     &_menu {
         display: flex;
+        justify-content: center;
+    }
+
+    &_mobile_menu {
+        display: flex;
         justify-content: flex-end;
     }
 }
