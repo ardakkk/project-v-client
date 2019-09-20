@@ -15,11 +15,15 @@ import SearchIcon from '@material-ui/icons/Search';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 import { MobileMenu } from '../../molecules/MobileMenu/MobileMenu';
+import { MobileSideBar } from '../../molecules/MobileSideBar/MobileSideBar';
 import * as classes from './Header.scss';
 
 export const Header: React.FunctionComponent<any> = props => {
     const [isFocused, setFocus] = React.useState<boolean>(false);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [toggleLeftSideBar, setToggleLeftSiderBar] = React.useState<boolean>(
+        false
+    );
 
     const onFocus = React.useCallback(() => {
         setFocus(true);
@@ -34,6 +38,16 @@ export const Header: React.FunctionComponent<any> = props => {
     const handleMobileMenuClose = (): void => {
         setMobileMoreAnchorEl(null);
     };
+    const toggleLeftSideBarDrawer = (event: any): void => {
+        if (
+            event.type === 'keydown' &&
+            (event.key === 'Tab' || event.key === 'Shift')
+        ) {
+            return;
+        }
+
+        setToggleLeftSiderBar(!toggleLeftSideBar);
+    };
 
     return (
         <Grid className={classes.Header}>
@@ -44,9 +58,10 @@ export const Header: React.FunctionComponent<any> = props => {
                             <Grid item={true} xs={2}>
                                 <IconButton
                                     edge='start'
-                                    className={classes.menuButton}
+                                    className={classes.burgerButton}
                                     color='inherit'
-                                    aria-label='open drawer'>
+                                    aria-label='open drawer'
+                                    onClick={toggleLeftSideBarDrawer}>
                                     <MenuIcon />
                                 </IconButton>
                             </Grid>
@@ -118,6 +133,10 @@ export const Header: React.FunctionComponent<any> = props => {
             <MobileMenu
                 mobileMoreAnchorEl={mobileMoreAnchorEl}
                 handleMobileMenuClose={handleMobileMenuClose}
+            />
+            <MobileSideBar
+                isOpenLeftSideBar={toggleLeftSideBar}
+                toggleLeftSideBarDrawer={toggleLeftSideBarDrawer}
             />
         </Grid>
     );
