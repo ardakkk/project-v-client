@@ -8,14 +8,15 @@ import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import AddIcon from '@material-ui/icons/Add';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
 import SettingsIcon from '@material-ui/icons/Settings';
 
+import { MobileMenu } from '../../molecules/MobileMenu/MobileMenu';
 import * as classes from './Header.scss';
 
 export const Header: React.FunctionComponent<any> = props => {
@@ -29,50 +30,12 @@ export const Header: React.FunctionComponent<any> = props => {
         setFocus(false);
     }, []);
 
-    const isMobuleMenuOpenMenu: boolean = Boolean(mobileMoreAnchorEl);
     const handleMobileMenuOpen = (event: any): void => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
     const handleMobileMenuClose = (): void => {
         setMobileMoreAnchorEl(null);
     };
-
-    const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            keepMounted={true}
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMobuleMenuOpenMenu}
-            onClose={handleMobileMenuClose}>
-            <MenuItem>
-                <IconButton color='inherit'>
-                    <Brightness5Icon />
-                </IconButton>
-                <p>white-theme</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton
-                    aria-label='show 11 new notifications'
-                    color='inherit'>
-                    <Badge badgeContent={11} color='secondary'>
-                        <NotificationsIcon />
-                    </Badge>
-                </IconButton>
-                <p>Notifications</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton
-                    aria-label='account of current user'
-                    aria-controls='primary-search-account-menu'
-                    aria-haspopup='true'
-                    color='inherit'>
-                    <SettingsIcon />
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
-        </Menu>
-    );
 
     return (
         <Grid className={classes.Header}>
@@ -102,7 +65,7 @@ export const Header: React.FunctionComponent<any> = props => {
                             lg={7}
                             xs={8}
                             className={`${classes.Header_search} ${
-                                isFocused ? classes.Header___search_focused : ''
+                                isFocused ? classes.Header_search__focused : ''
                             }`}>
                             <div className={classes.Header_searchIcon}>
                                 <SearchIcon />
@@ -122,10 +85,15 @@ export const Header: React.FunctionComponent<any> = props => {
                                 lg={3}
                                 className={classes.Header_menu}>
                                 <IconButton color='inherit'>
+                                    <AddIcon />
+                                </IconButton>
+                                <IconButton color='inherit'>
                                     <Brightness5Icon />
                                 </IconButton>
                                 <IconButton color='inherit'>
-                                    <NotificationsIcon />
+                                    <Badge badgeContent={11} color='secondary'>
+                                        <NotificationsIcon />
+                                    </Badge>
                                 </IconButton>
                                 <IconButton color='inherit'>
                                     <SettingsIcon />
@@ -149,7 +117,10 @@ export const Header: React.FunctionComponent<any> = props => {
                     </Grid>
                 </Toolbar>
             </AppBar>
-            {renderMobileMenu}
+            <MobileMenu
+                mobileMoreAnchorEl={mobileMoreAnchorEl}
+                handleMobileMenuClose={handleMobileMenuClose}
+            />
         </Grid>
     );
 };
