@@ -6,7 +6,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+import AddAlarm from '@material-ui/icons/AddAlarm';
+import Book from '@material-ui/icons/Book';
+import CalendarToday from '@material-ui/icons/CalendarToday';
+import DateRange from '@material-ui/icons/DateRange';
+import GpsFixed from '@material-ui/icons/GpsFixed';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 
 import * as classes from './MobileSideBar.scss';
@@ -28,35 +32,45 @@ export const MobileSideBar: React.FunctionComponent<IMobileSideBarProps> = ({
                     role='presentation'
                     onClick={toggleLeftSideBarDrawer}>
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                            (text, index) => (
-                                <ListItem button={true} key={text}>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? (
-                                            <InboxIcon />
-                                        ) : (
-                                            <MailIcon />
-                                        )}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
-                                </ListItem>
-                            )
-                        )}
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <InboxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Icebox' />
+                        </ListItem>
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <CalendarToday />
+                            </ListItemIcon>
+                            <ListItemText primary='Today' />
+                        </ListItem>
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <DateRange />
+                            </ListItemIcon>
+                            <ListItemText primary='Next week' />
+                        </ListItem>
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem button={true} key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <GpsFixed />
+                            </ListItemIcon>
+                            <ListItemText primary='Goals' />
+                        </ListItem>
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <AddAlarm />
+                            </ListItemIcon>
+                            <ListItemText primary='Alarm' />
+                        </ListItem>
+                        <ListItem button={true}>
+                            <ListItemIcon>
+                                <Book />
+                            </ListItemIcon>
+                            <ListItemText primary='Diary' />
+                        </ListItem>
                     </List>
                 </div>
             </Drawer>

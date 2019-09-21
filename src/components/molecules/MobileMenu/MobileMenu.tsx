@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
+import ShowChart from '@material-ui/icons/ShowChart';
 
 interface IMobileMenuProps {
     mobileMoreAnchorEl?: any;
@@ -31,7 +32,14 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
                 <IconButton color='inherit'>
                     <Brightness5Icon />
                 </IconButton>
-                <p>white-theme</p>
+            </MenuItem>
+            <MenuItem>
+                <IconButton color='inherit'>
+                    <Badge badgeContent={11} color='secondary'>
+                        <ShowChart />
+                    </Badge>
+                </IconButton>
+                <p>Productivity</p>
             </MenuItem>
             <MenuItem>
                 <IconButton
