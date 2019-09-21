@@ -31,6 +31,7 @@ module.exports = merge(commonConfig, {
         compress: true,
         contentBase: './dist',
         overlay: true,
+        historyApiFallback: true,
     },
     optimization: {
         usedExports: true,

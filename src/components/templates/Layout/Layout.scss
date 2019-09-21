@@ -1,0 +1,6 @@
+.Layout {
+    padding-top: 64px;
+    @media (min-width: 320px) and (max-width: 480px) {
+        padding-top: 56px;
+    }
+}

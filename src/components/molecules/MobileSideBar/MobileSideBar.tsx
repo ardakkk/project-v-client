@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
@@ -32,24 +33,34 @@ export const MobileSideBar: React.FunctionComponent<IMobileSideBarProps> = ({
                     role='presentation'
                     onClick={toggleLeftSideBarDrawer}>
                     <List>
-                        <ListItem button={true}>
-                            <ListItemIcon>
-                                <InboxIcon />
-                            </ListItemIcon>
-                            <ListItemText primary='Icebox' />
-                        </ListItem>
-                        <ListItem button={true}>
-                            <ListItemIcon>
-                                <CalendarToday />
-                            </ListItemIcon>
-                            <ListItemText primary='Today' />
-                        </ListItem>
-                        <ListItem button={true}>
-                            <ListItemIcon>
-                                <DateRange />
-                            </ListItemIcon>
-                            <ListItemText primary='Next week' />
-                        </ListItem>
+                        <Link
+                            to='/icebox'
+                            className={classes.MobileSideBar_link}>
+                            <ListItem button={true}>
+                                <ListItemIcon>
+                                    <InboxIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Icebox' />
+                            </ListItem>
+                        </Link>
+                        <Link to='/' className={classes.MobileSideBar_link}>
+                            <ListItem button={true}>
+                                <ListItemIcon>
+                                    <CalendarToday />
+                                </ListItemIcon>
+                                <ListItemText primary='Today' />
+                            </ListItem>
+                        </Link>
+                        <Link
+                            to='/next-week'
+                            className={classes.MobileSideBar_link}>
+                            <ListItem button={true}>
+                                <ListItemIcon>
+                                    <DateRange />
+                                </ListItemIcon>
+                                <ListItemText primary='Next week' />
+                            </ListItem>
+                        </Link>
                     </List>
                     <Divider />
                     <List>
