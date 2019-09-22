@@ -10,8 +10,8 @@ module.exports = merge(commonConfig, {
         bundle: './index.tsx',
     },
     output: {
-        filename: 'js/[name].[hash].min.js',
-        chunkFilename: '[name].[hash].js',
+        filename: 'js/[name].[contenthash:8].js',
+        chunkFilename: 'js/[name].[contenthash:8].js',
         path: resolve(__dirname, '../../build'),
         publicPath: '/',
     },
@@ -34,4 +34,11 @@ module.exports = merge(commonConfig, {
             staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
         }),
     ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+            }),
+        ],
+    },
 })

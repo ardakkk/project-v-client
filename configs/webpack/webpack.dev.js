@@ -11,18 +11,15 @@ module.exports = merge(commonConfig, {
         bundle: './index.tsx',
     },
     output: {
-        filename: 'js/[name].[hash].js',
-        chunkFilename: 'js/[name].[hash].js',
+        filename: 'js/bundle.js',
+        chunkFilename: 'js/[name].chunk.js',
         publicPath: '/',
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
     resolve: {
         alias: { 'react-dom': '@hot-loader/react-dom' },
     },
-    plugins: [
-        new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-        new BundleAnalyzerPlugin(),
-    ],
+    plugins: [new BundleAnalyzerPlugin()],
     devServer: {
         host: '0.0.0.0',
         disableHostCheck: true,
@@ -35,5 +32,6 @@ module.exports = merge(commonConfig, {
     },
     optimization: {
         usedExports: true,
+        namedModules: true,
     },
 })

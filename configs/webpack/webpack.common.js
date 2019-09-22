@@ -1,10 +1,10 @@
 const { resolve } = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const GenerateJsonFile = require('generate-json-file-webpack-plugin')
+
 const devMode = process.env.NODE_ENV !== 'prod'
 
 module.exports = {
@@ -66,8 +66,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: 'css/style.[hash].css',
-            chunkFilename: 'css/[id].[hash].css',
+            filename: 'css/style.[contenthash:8].css',
+            chunkFilename: 'css/[id].[contenthash:8].chunk.css',
         }),
         new GenerateJsonFile({
             filename: 'manifest.json',
@@ -87,10 +87,7 @@ module.exports = {
                 },
             },
         },
-        minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-            }),
-        ],
+        // Keep the runtime chunk separated to enable long term caching
+        runtimeChunk: true,
     },
 }
