@@ -1,18 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header organism Snapshot should match 1`] = `
-<div
-  className="Header"
->
+<WithStyles(ForwardRef(Grid))>
   <WithStyles(ForwardRef(AppBar))>
     <WithStyles(ForwardRef(Toolbar))>
-      <WithStyles(ForwardRef(Typography))
-        noWrap={true}
-        variant="h6"
+      <WithStyles(ForwardRef(Grid))
+        alignItems="center"
+        container={true}
       >
-        Victory
-      </WithStyles(ForwardRef(Typography))>
+        <Hidden
+          smUp={true}
+        >
+          <WithStyles(ForwardRef(Grid))
+            item={true}
+            xs={2}
+          >
+            <WithStyles(ForwardRef(IconButton))
+              aria-label="open drawer"
+              color="inherit"
+              edge="start"
+              onClick={[Function]}
+            >
+              <MenuIcon />
+            </WithStyles(ForwardRef(IconButton))>
+          </WithStyles(ForwardRef(Grid))>
+        </Hidden>
+        <WithStyles(ForwardRef(Grid))
+          item={true}
+          lg={2}
+        >
+          <Hidden
+            mdDown={true}
+          >
+            <WithStyles(ForwardRef(Typography))
+              noWrap={true}
+              variant="h6"
+            >
+              Project V
+            </WithStyles(ForwardRef(Typography))>
+          </Hidden>
+        </WithStyles(ForwardRef(Grid))>
+        <WithStyles(ForwardRef(Grid))
+          className="undefined "
+          item={true}
+          lg={7}
+          xs={8}
+        >
+          <div>
+            <SearchIcon />
+          </div>
+          <div>
+            <WithStyles(ForwardRef(InputBase))
+              inputProps={
+                Object {
+                  "aria-label": "search",
+                }
+              }
+              onBlur={[Function]}
+              onFocus={[Function]}
+              placeholder="Quick Find"
+            />
+          </div>
+        </WithStyles(ForwardRef(Grid))>
+        <Hidden
+          smDown={true}
+        >
+          <WithStyles(ForwardRef(Grid))
+            item={true}
+            lg={3}
+          >
+            <WithStyles(ForwardRef(IconButton))
+              color="inherit"
+            >
+              <AddIcon />
+            </WithStyles(ForwardRef(IconButton))>
+            <WithStyles(ForwardRef(IconButton))
+              color="inherit"
+            >
+              <Brightness5Icon />
+            </WithStyles(ForwardRef(IconButton))>
+            <WithStyles(ForwardRef(IconButton))
+              color="inherit"
+            >
+              <WithStyles(ForwardRef(Badge))
+                badgeContent={11}
+                color="secondary"
+              >
+                <NotificationsIcon />
+              </WithStyles(ForwardRef(Badge))>
+            </WithStyles(ForwardRef(IconButton))>
+            <WithStyles(ForwardRef(IconButton))
+              color="inherit"
+            >
+              <SettingsIcon />
+            </WithStyles(ForwardRef(IconButton))>
+          </WithStyles(ForwardRef(Grid))>
+        </Hidden>
+        <Hidden
+          smUp={true}
+        >
+          <WithStyles(ForwardRef(Grid))
+            item={true}
+            xs={2}
+          >
+            <WithStyles(ForwardRef(IconButton))
+              aria-haspopup="true"
+              aria-label="show more"
+              color="inherit"
+              onClick={[Function]}
+            >
+              <MoreVertIcon />
+            </WithStyles(ForwardRef(IconButton))>
+          </WithStyles(ForwardRef(Grid))>
+        </Hidden>
+      </WithStyles(ForwardRef(Grid))>
     </WithStyles(ForwardRef(Toolbar))>
   </WithStyles(ForwardRef(AppBar))>
-</div>
+  <Component
+    handleMobileMenuClose={[Function]}
+    mobileMoreAnchorEl={null}
+  />
+  <Component
+    isOpenLeftSideBar={false}
+    toggleLeftSideBarDrawer={[Function]}
+  />
+</WithStyles(ForwardRef(Grid))>
 `;
