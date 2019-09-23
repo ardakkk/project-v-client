@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header organism Snapshot should match 1`] = `
+exports[`Header organism. Snapshot should match. 1`] = `
 <WithStyles(ForwardRef(Grid))>
   <WithStyles(ForwardRef(AppBar))>
     <WithStyles(ForwardRef(Toolbar))>

@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileMenu component. Snapshot should match 1`] = `
+<WithStyles(ForwardRef(Menu))
+  anchorOrigin={
+    Object {
+      "horizontal": "right",
+      "vertical": "top",
+    }
+  }
+  keepMounted={true}
+  open={false}
+  transformOrigin={
+    Object {
+      "horizontal": "right",
+      "vertical": "top",
+    }
+  }
+>
+  <WithStyles(ForwardRef(MenuItem))>
+    <WithStyles(ForwardRef(IconButton))
+      color="inherit"
+    >
+      <Brightness5Icon />
+    </WithStyles(ForwardRef(IconButton))>
+  </WithStyles(ForwardRef(MenuItem))>
+  <WithStyles(ForwardRef(MenuItem))>
+    <WithStyles(ForwardRef(IconButton))
+      color="inherit"
+    >
+      <WithStyles(ForwardRef(Badge))
+        badgeContent={11}
+        color="secondary"
+      >
+        <ShowChartIcon />
+      </WithStyles(ForwardRef(Badge))>
+    </WithStyles(ForwardRef(IconButton))>
+    <p>
+      Productivity
+    </p>
+  </WithStyles(ForwardRef(MenuItem))>
+  <WithStyles(ForwardRef(MenuItem))>
+    <WithStyles(ForwardRef(IconButton))
+      aria-label="show 11 new notifications"
+      color="inherit"
+    >
+      <WithStyles(ForwardRef(Badge))
+        badgeContent={11}
+        color="secondary"
+      >
+        <NotificationsIcon />
+      </WithStyles(ForwardRef(Badge))>
+    </WithStyles(ForwardRef(IconButton))>
+    <p>
+      Notifications
+    </p>
+  </WithStyles(ForwardRef(MenuItem))>
+  <WithStyles(ForwardRef(MenuItem))>
+    <WithStyles(ForwardRef(IconButton))
+      aria-controls="primary-search-account-menu"
+      aria-haspopup="true"
+      aria-label="account of current user"
+      color="inherit"
+    >
+      <SettingsIcon />
+    </WithStyles(ForwardRef(IconButton))>
+    <p>
+      Profile
+    </p>
+  </WithStyles(ForwardRef(MenuItem))>
+</WithStyles(ForwardRef(Menu))>
+`;

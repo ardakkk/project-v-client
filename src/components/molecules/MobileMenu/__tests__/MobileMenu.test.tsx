@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
 
-import { Header } from '../Header';
+import { MobileMenu } from '../MobileMenu';
 
-describe('Header component.', () => {
+describe('MobileMenu component.', () => {
     it('Snapshot should match.', () => {
-        const component = shallow(<Header />);
+        const component = shallow(<MobileMenu />);
 
         expect(component).toMatchSnapshot();
     });
