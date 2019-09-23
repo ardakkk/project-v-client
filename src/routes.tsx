@@ -7,16 +7,12 @@ const Today = React.lazy(() => import('./pages/Today/Today'));
 
 export const routes: IRoutesModel[] = [
     {
-        component: () => <IceBox />,
-        path: '/icebox',
-    },
-    {
         component: () => <Today />,
-        path: '/today',
-    },
-    {
-        component: () => <div>Home</div>,
         exact: true,
         path: '/',
+    },
+    {
+        component: () => <IceBox />,
+        path: '/icebox',
     },
 ];
