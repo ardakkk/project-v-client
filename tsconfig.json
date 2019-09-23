@@ -1,16 +1,18 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "esnext",
         "outDir": "./build/js",
-        "lib": ["dom", "es5", "scripthost", "es2015.promise"],
+        "lib": ["es2017", "dom"],
         "declaration": false,
         "sourceMap": true,
         "noImplicitAny": true,
         "jsx": "react",
         "moduleResolution": "node",
-        "typeRoots": ["./node_modules/@types"]
+        "typeRoots": ["./node_modules/@types"],
+        "allowSyntheticDefaultImports": true,
+        "types": ["@types/jest"]
     },
     "include": ["./src/**/*"],
-    "exclude": ["node_modules", "!node_modules/@types", "**/*.test.tsx"]
+    "exclude": ["node_modules"]
 }

@@ -1,14 +1,18 @@
 {
+    "preset": "ts-jest",
     "rootDir": "..",
-    "setupFiles": ["<rootDir>/configs/test-shim.js", "<rootDir>/configs/test-setup.js"],
+    "setupFiles": [
+        "<rootDir>/configs/test-shim.js",
+        "<rootDir>/configs/test-setup.js"
+    ],
     "roots": ["<rootDir>/src/"],
     "moduleNameMapper": {
         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
         "\\.(css|scss|less)$": "<rootDir>/tests/__mocks__/styleMock.js"
     },
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "transform": {
-        "^.+\\.(ts|tsx)$": "<rootDir>/configs/test-preprocessor.js"
+        "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "transformIgnorePatterns": ["/node_modules/"],
     "testRegex": "/__tests__/.*\\.(ts|tsx)$",
