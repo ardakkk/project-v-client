@@ -1,12 +1,12 @@
 import { createStore, Store } from 'redux';
 
 import rootReducer from './rootReducer';
-import { ThemesState } from './themes/types';
+import { IDarkModeState } from './themes/types';
 
-export interface ApplicationState {
-    themes: ThemesState;
+export interface IApplicationState {
+    themes: IDarkModeState;
 }
 
-const store: Store<ApplicationState> = createStore(rootReducer);
+const store: Store<IApplicationState> = createStore(rootReducer);
 
 export default store;

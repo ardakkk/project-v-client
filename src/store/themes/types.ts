@@ -1,13 +1,13 @@
 /**
  * Action type
  */
-export enum ThemeTypes {
-    SET_THEME = '@themes/SET_THEME',
+export enum DarkModeTypes {
+    SET_DARK_MODE = '@themes/SET_DARK_MODE',
 }
 
 /**
  * State type
  */
-export interface ThemesState {
+export interface IDarkModeState {
     theme: string;
 }

@@ -1,14 +1,14 @@
 import { Reducer } from 'redux';
 
-import { ThemesState, ThemeTypes } from './types';
+import { DarkModeTypes, IDarkModeState } from './types';
 
-const INITAL_STATE: ThemesState = {
+const INITAL_STATE: IDarkModeState = {
     theme: '',
 };
 
-const reducer: Reducer<ThemesState> = (state = INITAL_STATE, action) => {
+const reducer: Reducer<IDarkModeState> = (state = INITAL_STATE, action) => {
     switch (action.type) {
-        case ThemeTypes.SET_THEME:
+        case DarkModeTypes.SET_DARK_MODE:
             return { ...state, theme: action.payload.theme };
         default:
             return state;
