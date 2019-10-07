@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import themes from './themes';
+import darkMode from './darkMode';
 
 export default combineReducers({
-    themes,
+    darkMode,
 });

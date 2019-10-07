@@ -9,5 +9,5 @@ export enum DarkModeTypes {
  * State type
  */
 export interface IDarkModeState {
-    theme: string;
+    isDarkMode: boolean;
 }

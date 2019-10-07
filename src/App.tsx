@@ -2,7 +2,7 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
-import { Layout } from './components/templates/Layout/Layout';
+import Layout from './components/templates/Layout/Layout';
 import { routes } from './routes';
 
 const App: React.FunctionComponent<any> = props => {
