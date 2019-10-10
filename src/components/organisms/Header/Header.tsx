@@ -14,7 +14,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
 import SettingsIcon from '@material-ui/icons/Settings';
 
-import { MobileMenu } from '../../molecules/MobileMenu/MobileMenu';
+import MobileMenu from '../../molecules/MobileMenu/MobileMenu';
 import { MobileSideBar } from '../../molecules/MobileSideBar/MobileSideBar';
 import * as classes from './Header.scss';
 

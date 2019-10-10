@@ -1,5 +1,8 @@
-export const setDarkMode = () => {
+import { DarkModeTypes } from './types';
+
+export const setDarkMode = (isDarkMode: boolean) => {
     return {
-        isDarkMode: true,
+        type: DarkModeTypes.SET_DARK_MODE,
+        isDarkMode,
     };
 };

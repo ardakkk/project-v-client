@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,16 +10,26 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ShowChart from '@material-ui/icons/ShowChart';
 
+import { setDarkMode } from '../../../store/darkMode/actions';
+
 interface IMobileMenuProps {
     mobileMoreAnchorEl?: any;
     handleMobileMenuClose?: () => void;
+    toggleDarkMode?: (isDarkMode: boolean) => void;
+    isDarkMode?: boolean;
 }
 
-export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
+const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
     mobileMoreAnchorEl,
     handleMobileMenuClose,
+    toggleDarkMode,
+    isDarkMode,
 }) => {
     const isMobuleMenuOpenMenu: boolean = Boolean(mobileMoreAnchorEl);
+
+    const onClick = React.useCallback(() => {
+        toggleDarkMode(!isDarkMode);
+    }, []);
 
     return (
         <Menu
@@ -29,7 +40,7 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
             open={isMobuleMenuOpenMenu}
             onClose={handleMobileMenuClose}>
             <MenuItem>
-                <IconButton color='inherit'>
+                <IconButton color='inherit' onClick={onClick}>
                     <Brightness5Icon />
                 </IconButton>
             </MenuItem>
@@ -64,3 +75,16 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
         </Menu>
     );
 };
+
+const mapStateToProps = (state: any) => ({
+    isDarkMode: state.darkMode.isDarkMode,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+    toggleDarkMode: (isDarkMode: boolean) => dispatch(setDarkMode(isDarkMode)),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MobileMenu);
