@@ -15,7 +15,7 @@ import { setDarkMode } from '../../../store/darkMode/actions';
 interface IMobileMenuProps {
     mobileMoreAnchorEl?: any;
     handleMobileMenuClose?: () => void;
-    toggleDarkMode?: (isDarkMode: boolean) => void;
+    toggleDarkMode?: () => void;
     isDarkMode?: boolean;
 }
 
@@ -23,12 +23,11 @@ const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
     mobileMoreAnchorEl,
     handleMobileMenuClose,
     toggleDarkMode,
-    isDarkMode,
 }) => {
     const isMobuleMenuOpenMenu: boolean = Boolean(mobileMoreAnchorEl);
 
-    const onClick = React.useCallback(() => {
-        toggleDarkMode(!isDarkMode);
+    const onToggleDarkMode = React.useCallback(() => {
+        toggleDarkMode();
     }, []);
 
     return (
@@ -39,8 +38,8 @@ const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMobuleMenuOpenMenu}
             onClose={handleMobileMenuClose}>
-            <MenuItem>
-                <IconButton color='inherit' onClick={onClick}>
+            <MenuItem onClick={onToggleDarkMode}>
+                <IconButton color='inherit'>
                     <Brightness5Icon />
                 </IconButton>
             </MenuItem>
@@ -76,15 +75,11 @@ const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({
     );
 };
 
-const mapStateToProps = (state: any) => ({
-    isDarkMode: state.darkMode.isDarkMode,
-});
-
 const mapDispatchToProps = (dispatch: any) => ({
-    toggleDarkMode: (isDarkMode: boolean) => dispatch(setDarkMode(isDarkMode)),
+    toggleDarkMode: (isDarkMode: boolean) => dispatch(setDarkMode()),
 });
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(MobileMenu);
