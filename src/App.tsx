@@ -2,6 +2,7 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
+import './assets/styles/general.scss';
 import Layout from './components/templates/Layout/Layout';
 import { routes } from './routes';
 

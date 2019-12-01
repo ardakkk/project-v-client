@@ -11,7 +11,7 @@ export const Layout: React.FunctionComponent<any> = ({
     return (
         <div
             className={`${classes.Layout} ${
-                isDarkMode ? 'Layout--dark-mode' : ''
+                isDarkMode ? classes.Layout__dark_mode : ''
             }`}>
             <div className='Layout__header'>
                 <Header />

@@ -1,6 +1,15 @@
+@import '../../../assets/styles/__vars.scss';
+
 .Layout {
     padding-top: 64px;
+    min-height: 100vh;
+    transition: $transition;
     @media (min-width: 320px) and (max-width: 480px) {
         padding-top: 56px;
+    }
+
+    &__dark_mode {
+        background: $darkBackground;
+        color: $secondary;
     }
 }
