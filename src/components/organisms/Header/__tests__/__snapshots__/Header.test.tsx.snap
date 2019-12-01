@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header organism. Snapshot should match. 1`] = `
+exports[`Header component. Snapshot should match. 1`] = `
 <WithStyles(ForwardRef(Grid))>
   <WithStyles(ForwardRef(AppBar))>
     <WithStyles(ForwardRef(Toolbar))>
@@ -116,7 +116,7 @@ exports[`Header organism. Snapshot should match. 1`] = `
       </WithStyles(ForwardRef(Grid))>
     </WithStyles(ForwardRef(Toolbar))>
   </WithStyles(ForwardRef(AppBar))>
-  <Component
+  <Connect(MobileMenu)
     handleMobileMenuClose={[Function]}
     mobileMoreAnchorEl={null}
   />
